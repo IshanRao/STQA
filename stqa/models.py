@@ -12,7 +12,7 @@ class Group(models.Model) :
 class Member(models.Model) :
     mem_id = models.CharField(max_length=10,primary_key=True)
     mem_name = models.CharField(max_length=30)
-    grp = models.ForeignKey('Group', on_delete=models.SET_NULL)
+    grp = models.CharField(max_length=10)
 
 class Manager(models.Model) :
     M_id = models.CharField(max_length=10,primary_key=True)
