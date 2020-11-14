@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title> Group Sign-Up Page</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static "stqa\css\styles1.css"%}">
+
+
+    </head>
+
+    <body>
+            <header>
+                PROJECT MANAGEMENT SYSTEM
+            </header>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav1">                      
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'stqa:index'%}">HOME<span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>   
+              </div>
+            </nav>
+                
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                        <center>
+                        <h1>SIGN-UP</h1>
+                      </center>
+                              
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            {% if error %}
+                            <div class="alert alert-danger" role="alert">
+                             {{error}}  
+                              </div>
+                              {% endif %}
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="groupid">Group-ID</label>
+                                    <input type="text" class="form-control" name="group_id" id="groupid" placeholder="Group-ID" required>
+                                  </div>                              
+                                  <div class="form-group col-md-6">
+                                    <label for="inputDiv">Division</label>
+                                    <select name="div" id="inputDiv" class="form-control" >
+                                      <option selected>Finance</option>
+                                      <option>IT</option>
+                                      <option>Marketing</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                
+
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Group leader's email" required>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="inputGrpPassword">Password</label>
+                                    <input type="password" class="form-control" name="password" id="inputGrpPassword" placeholder="Password" required>
+                                  </div>
+
+                                </div>
+                              
+
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputleader">Group-leader</label>
+                                    <input type="text" class="form-control" name="group_leader" id="inputleader" placeholder="Group-leader" required>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="inputIDLeader">ID :</label>
+                                    <input type="text" class="form-control" name="leader_id" id="inputIDLeader" placeholder="" required>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputMem1">Member 1 :</label>
+                                  <input type="text" class="form-control" name="mem1" id="inputMem1" placeholder="Name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputID1">ID :</label>
+                                  <input type="text" class="form-control" name="id1" id="inputID1" placeholder="" required>
+                                </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                      <label for="inputMem2">Member 2 :</label>
+                                      <input type="text" class="form-control" name="mem2" id="inputMem2" placeholder="Name" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="inputID2">ID :</label>
+                                      <input type="text" class="form-control" name="id2" id="inputID2" placeholder="" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="form-group col-md-6">
+                                          <label for="inputMem3">Member 3 :</label>
+                                          <input type="text" class="form-control" name="mem3" id="inputMem3" placeholder="Name" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="inputID3">ID :</label>
+                                          <input type="text" class="form-control" name="id3" id="inputID3" placeholder="" required>
+                                        </div>
+                                </div>
+                               
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                              </form>
+
+                              <p>GROUP already registered?..<a href="{%url 'stqa:group_login'%}"> LOG-IN </a></p>
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        </div>
+        
+
+    </body>
+</html>

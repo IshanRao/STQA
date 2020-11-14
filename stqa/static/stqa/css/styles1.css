@@ -1,0 +1,75 @@
+header
+{
+	width: 100%;
+	height: 150px;
+	background-size: 100% 100%;
+    border-bottom: 1px solid brown;
+    background-color: brown;
+    color: aqua;
+    font-size: 70px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#footer
+{
+    background-color: brown ;
+    border-bottom: 1px solid brown;
+    color: aqua;
+	width: 100%;
+	height: 9%;
+	font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+     
+}
+
+#nav1
+{
+    height: 80px;
+}
+
+a
+{
+	text-decoration: none;
+}
+input
+{
+	box-shadow: 2px 2px 2px brown;
+}
+
+#project_card
+{
+	box-shadow: 4px 4px 5px brown;
+    height: 180px;
+    margin: 5px;
+}
+#group_info_card
+{
+	box-shadow: 4px 4px 5px brown;
+	height: 300px;
+}
+
+
+.list-group
+{
+    box-shadow: 4px 4px 5px brown;
+}
+
+
+button
+{
+	padding:3px;
+	background-color: brown;
+	border:none;
+	color: white;
+	box-shadow: 2px 2px 2px brown;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add projects</title>
+    </head>
+    {%load static%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static "stqa\css\styles1.css"%}">
+
+    
+    <body>
+
+            <header>
+                PROJECT MANAGEMENT SYSTEM
+            </header>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav1">                          
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'stqa:group_info'%}">INDEX<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'stqa:group_login'%}">LOG OUT</a>
+                  </li>
+                </ul>   
+              </div>
+            </nav>  
+
+      {% if error %}
+      <div class="alert alert-danger" role="alert">
+        {{error}}  
+      </div>
+      {% endif %}  
+
+      
+        <div style="margin-top: 20px; margin-bottom: 20px;">    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+                    <fieldset>
+                        <form method="POST" action="">
+                                {% csrf_token %}
+                                
+                            
+                                
+                                  <div class="form-group">
+                                    <label for="inputTitle">Project Title</label>
+                                    <input type="text" class="form-control" id="inputTitle" placeholder="Project Title" name="project_title">
+                                  </div>
+                                  <div class="form-group">                              
+                                    <label for="inputDomain">Domain</label>
+                                    <input type="text" class="form-control" id="inputDomain" placeholder="Domain" name="domain">
+                                  </div>                          
+                                  <div class="form-group">
+                                        <label for="inputDesc">Project Desciption</label>
+                                        <textarea class="form-control" rows="5" col="5" name="description" id="inputDesc">
+                                        </textarea>
+                                  </div>
+                                   <button type="submit" class="btn btn-primary">ADD </button>
+                                  
+                              </form>
+                            
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        </div>
+        
+    </body>
+</html>

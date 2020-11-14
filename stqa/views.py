@@ -178,7 +178,6 @@ def add_projects(req) :
         return render(req,'stqa/add_projects.html')    
 
 
-
 def group_project_page(req) :
     
     if req.method == 'POST' :       
@@ -263,10 +262,10 @@ def project_info(req) :
         mem_list.append(i.mem_name)
         id_list.append(i.mem_id)
    
-    project_rows = Project.objects.raw('Select * from home_project ')
+    project_rows = Project.objects.raw('Select * from stqa_project ')
     for i in project_rows :
         if i.grp == group_login['group_id']:
-            return render(req,'stqa/project_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'r1': id_list[0],'n2': mem_list[1],'r2': id_list[1],'n3': mem_list[2],'r3': id_list[2],'n4': mem_list[3],'r4': id_list[3],'email':group_login['email'],'title':i.title,'id':i.proj_id,'domain':i.domain,'description':i.description,'status':i.status})    
+            return render(req,'stqa/project_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'id1': id_list[0],'n2': mem_list[1],'id2': id_list[1],'n3': mem_list[2],'id3': id_list[2],'n4': mem_list[3],'id4': id_list[3],'email':group_login['email'],'title':i.title,'id':i.proj_id,'domain':i.domain,'description':i.description,'status':i.status})    
 
     return render(req,'stqa/project_info.html')
 
@@ -275,20 +274,16 @@ def group_info(req) :
         if req.method == 'POST':
             with connection.cursor() as cursor:
                cursor.execute('delete from stqa_project where grp = %s',[group_login['group_id']])
+            return render(req,'stqa/group_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'id1': id_list[0],'n2': mem_list[1],'id2': id_list[1],'n3': mem_list[2],'id3': id_list[2],'n4': mem_list[3],'id4': id_list[3],'email':group_login['email'],'title':"You didn't add any Project..."})    
 
-            return render(req,'stqa/group_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'r1': id_list[0],'n2': mem_list[1],'r2': id_list[1],'n3': mem_list[2],'r3': id_list[2],'n4': mem_list[3],'r4': id_list[3],'email':group_login['email'],'title':"You didn't add any Project..."})    
-
-        else :
-             
+        else :            
             project_rows = Project.objects.raw('Select * from stqa_project ')
             for i in project_rows :
                
                 if i.grp == group_login['group_id']:
              
-                    return render(req,'stqa/group_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'r1': id_list[0],'n2': mem_list[1],'r2': id_list[1],'n3': mem_list[2],'r3': id_list[2],'n4': mem_list[3],'r4': id_list[3],'email':group_login['email'],'title':i.title,'id':i.proj_id,'domain':i.domain,'description':i.description,'status':i.status})
-          
-
-            return render(req,'stqa/group_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'r1': id_list[0],'n2': mem_list[1],'r2': id_list[1],'n3': mem_list[2],'r3': id_list[2],'n4': mem_list[3],'r4': id_list[3],'email':group_login['email'],'title':"You didn't add any Project..."})    
+                    return render(req,'stqa/group_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'id1': id_list[0],'n2': mem_list[1],'id2': id_list[1],'n3': mem_list[2],'id3': id_list[2],'n4': mem_list[3],'id4': id_list[3],'email':group_login['email'],'title':i.title,'id':i.proj_id,'domain':i.domain,'description':i.description,'status':i.status})
+            return render(req,'stqa/group_info.html',{'group_id': group_login['group_id'],'div': group_login['division'],'n1': mem_list[0],'id1': id_list[0],'n2': mem_list[1],'id2': id_list[1],'n3': mem_list[2],'id3': id_list[2],'n4': mem_list[3],'id4': id_list[3],'email':group_login['email'],'title':"You didn't add any Project..."})    
 
     else :
         return render(req,'stqa/group_info.html')

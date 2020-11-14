@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Project Information</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static "stqa\css\styles1.css"%}">
+        
+    </head>
+
+    <body>
+            <header>
+                PROJECT MANAGEMENT SYSTEM
+            </header>
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav1"> 
+                     
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{%url 'home:manager_project_page'%}">BACK<span class="sr-only">(current)</span></a>
+                        </li>
+                      </ul>   
+                    </div>
+            </nav>
+
+            <div style="margin-top: 40px; margin-bottom: 40px;">
+            <div class="container">
+                <div class="row">
+
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><b>Group-Id :</b>  {{group_id}}     <b>Div:</b> {{div}} </li>
+                                <li class="list-group-item"><b>Name :</b>    {{n1}}  <b>ID :</b> {{id1}}</li>
+                                <li class="list-group-item"><b>Name :</b>    {{n2}}  <b>ID :</b> {{id2}}</li>
+                                <li class="list-group-item"><b>Name :</b>    {{n3}}  <b>ID :</b> {{id3}}</li>
+                                <li class="list-group-item"><b>Name :</b>    {{n4}}  <b>ID :</b> {{id4}}</li>
+                                <li class="list-group-item"><b>Email :</b> {{email}}</li>
+                            </ul>                            
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card" id="group_info_card">
+                                    <h5 class="card-header">Project Title : {{title}}</h5> 
+                                    <div class="card-body">
+                                      <h5 class="card-text">Project Id :  {{id}}</h5>                   
+                                      <p class="card-text"><b>DOMAIN : </b>{{domain}}</p> 
+                    
+                                      <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                        DESCRIPTION
+                                      </button>
+                                      
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalCenterTitle">DESCRIPTION : </h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              {{description}}
+                                            </div>
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                            </div>
+                         </div>                    
+                </div>
+            </div>
+        </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

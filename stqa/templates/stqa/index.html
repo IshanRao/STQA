@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static "stqa\css\styles1.css"%}">
+    </head>
+
+    <body>
+            <!--header-->
+            <header>
+                    PROJECT MANAGEMENT SYSTEM
+            </header>
+            
+            <!--navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav1">                      
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{%url 'stqa:manager_login'%}">MANAGER<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{%url 'stqa:group_login'%}">GROUP</a>
+                        </li>
+                      </ul>   
+                    </div>
+            </nav>
+
+            <!--content-->
+            <center>
+            <div style="margin-top: 80px; margin-bottom: 20px;">   
+                                
+          
+            </div>
+            </center>
+    </body>
+
+  
+</html>

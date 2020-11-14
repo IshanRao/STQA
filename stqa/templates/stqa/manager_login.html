@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title> Manager Login Page</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static "stqa\css\styles1.css"%}">
+    </head>
+
+    <body>
+            <header>
+                PROJECT MANAGEMENT SYSTEM
+            </header>
+            
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav1"> 
+                     
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                <a class="nav-link" href="{%url 'stqa:index'%}">HOME</a>
+              </li>
+            </ul>   
+          </div>
+        </nav>
+       
+        
+            <div style="margin-top: 20px; margin-bottom: 20px;">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                      <center>
+                      <h1>MANAGER LOGIN</h1>
+                    </center>
+                        <form method="POST" action="">
+                                {% csrf_token %}
+                                {% if error %}
+                                <div class="alert alert-danger" role="alert">
+                                  {{error}}  
+                                </div>
+                                {% endif %}
+                            
+                                <div style="margin-top: 50px; margin-bottom: 50px;"></div>
+                                <div class="form-group">
+                                  <label for="inputManagererId">Manager-Id</label>
+                                  <input type="text" class="form-control" id="inputManagererId" placeholder="Manager-Id" name="manager_id" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputManagerPassword">Password</label>
+                                  <input type="password" class="form-control" id="inputManagerPassword" placeholder="Password" name="manager_password" required>
+                                </div>
+    
+                              
+                              <button type="submit" class="btn btn-primary"> Log In </button>
+                        </form>                            
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        </div>
+
+    </body>
+</html>

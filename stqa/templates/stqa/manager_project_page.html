@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manager - Project Page</title>
+        {%load static%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static "stqa\css\styles1.css"%}">
+
+    </head>
+
+    <body>
+        <header>
+            PROJECT MANAGEMENT SYSTEM
+        </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav1"> 
+                 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="{%url 'stqa:index'%}">LOG OUT<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>   
+      </div>
+      
+    </nav>
+
+    <div style="margin-top: 20px; margin-bottom: 20px;"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <center>
+            <h1> APPROVED </h1>
+          </center>
+            <br><br>
+            <form method="POST"> 
+            {% csrf_token %}
+            
+            {%for query1 in query1 %}
+            <div class="card" id="project_card">
+              <h5 class="card-header">Project Title :{{query1.title}}</h5>
+               <div class="card-body">
+                <h5 class="card-title">Group-Id : {{query1.grp}}</h5>
+                
+                <button type="submit" class="btn btn-primary" data-toggle="modal" name="info_btn1" value="{{query1.grp}}">
+                    DESCRIPTION
+                </button>
+               
+                </div>
+            </div>
+             {%endfor%}
+          </div>
+        </form>
+          
+          <div class="col-md-6">
+            <center>
+            <h1> APPROVAL PENDING </h1>
+          </center>
+            <br><br>
+            <form method="POST">
+            {% csrf_token %}
+            {%for query in query %}
+            <div class="card" id="project_card">
+              <h5 class="card-header">Project Title :{{query.title}}</h5>
+               <div class="card-body">
+                <h5 class="card-title">Group-Id : {{query.grp}}</h5>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" name="info_btn" value="{{query.grp}}">
+                  DESCRIPTION
+                </button>
+
+              <button type="submit"  class="btn btn-primary" name="group_id" value="{{query.grp}}" style="margin-left: 170px ">APPROVE</button>
+                
+              <button type="submit" class="btn btn-primary" name="reject_btn" value="{{query.grp}}">REJECT</button>
+            </div>
+             </div>
+             {%endfor%}
+            </form> 
+          </div>
+        </div>
+      </div>                   
+          
+    </div>
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+    </body>
+</html>
