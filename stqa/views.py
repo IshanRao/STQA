@@ -184,8 +184,8 @@ def group_project_page(req) :
         pass      
 
     elif req.method == 'GET':
-        query = Project.objects.raw('select * from home_project where status = 1')        
-        query1 = Project.objects.raw('select * from home_project where status = 2')
+        query = Project.objects.raw('select * from stqa_project where status = 1')        
+        query1 = Project.objects.raw('select * from stqa_project where status = 2')
         return render(req,'stqa/group_project_page.html',{'query':query,'query1':query1})    
     
 def manager_project_page(req) :
@@ -202,7 +202,7 @@ def manager_project_page(req) :
             with connection.cursor() as cursor:
                 cursor.execute('update stqa_project set status = 2 where grp = %s',[group_id])                
 
-                group_row = Group.objects.raw('select * from home_group')
+                group_row = Group.objects.raw('select * from stqa_group')
                 for i in group_row:
                     if i.group_id == group_id:
                         group_login['email'] = i.email
@@ -213,7 +213,7 @@ def manager_project_page(req) :
 
             #Status = 3 for project rejection
             with connection.cursor() as cursor:
-                cursor.execute('update home_project set status = 3 where grp = %s',[group_id])
+                cursor.execute('update stqa_project set status = 3 where grp = %s',[group_id])
 
         elif 'info_btn' in req.POST:
             group_login['group_id'] = ""

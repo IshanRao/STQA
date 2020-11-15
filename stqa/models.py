@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 class Group(models.Model) :
     group_id = models.CharField(max_length=10,primary_key=True)
-    leader_id = models.ForeignKey('Member', on_delete=models.CASCADE)
-    division = models.CharField(max_length=1)
+    leader_id = models.CharField(max_length=10)
+    division = models.CharField(max_length=20)
     email = models.EmailField()
     password = models.CharField(max_length=50)
       
@@ -12,7 +12,7 @@ class Group(models.Model) :
 class Member(models.Model) :
     mem_id = models.CharField(max_length=10,primary_key=True)
     mem_name = models.CharField(max_length=30)
-    grp = models.CharField(max_length=10)
+    grp = models.ForeignKey('Group', on_delete=models.CASCADE)
 
 class Manager(models.Model) :
     M_id = models.CharField(max_length=10,primary_key=True)
