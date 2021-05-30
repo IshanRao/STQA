@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\stqa"
+    "\\stqa",
+    "\\Stqa_project"
   ],
-  "SelectedNode": "\\Stqa_project",
+  "SelectedNode": "\\stqa\\views.py",
   "PreviewInSolutionExplorer": false
 }

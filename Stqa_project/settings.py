@@ -76,15 +76,26 @@ WSGI_APPLICATION = 'Stqa_project.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'stqa',
+    #     'USER':'root',
+    #     'PASSWORD':'root',
+    #     'HOST':'localhost',
+    #     'PORT':'3306'
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'stqa',
-        'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT':'3306'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbg9q8ub3p2q4p',
+        'USER':'owwemcsydxphkj',
+        'PASSWORD':'f9ead045b7dfaf3fb5ac831ae39c44aca3fa43b718e70dcaeb310fd316f451df',
+        'HOST':'ec2-54-152-185-191.compute-1.amazonaws.com',
+        'PORT':'5432'
     }
 }
+# postgres://owwemcsydxphkj:f9ead045b7dfaf3fb5ac831ae39c44aca3fa43b718e70dcaeb310fd316f451df@ec2-54-152-185-191.compute-1.amazonaws.com:5432/dbg9q8ub3p2q4p
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
