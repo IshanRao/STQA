@@ -1,0 +1,1 @@
+web: gunicorn Stqa_project.wsgi 
